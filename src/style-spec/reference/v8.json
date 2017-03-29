@@ -825,6 +825,22 @@
         "data-driven styling": {}
       }
     },
+    "icon-pitch-scale": {
+      "type": "number",
+      "default": 1,
+      "minimum": 0,
+      "maximum": 1,
+      "doc": "If set to 1, icon scales along with other map features as the map is tilted. Values lower than 1 reduce the amount of scaling. Value of 0 means icon stays the same size no matter the tilt of the map.",
+      "requires": [
+        "icon-image"
+      ],
+      "sdk-support": {
+        "basic functionality": {
+          "js": "0.34.0"
+        },
+        "data-driven styling": {}
+      }
+    },
     "icon-text-fit": {
       "type": "enum",
       "function": "piecewise-constant",
@@ -1149,6 +1165,22 @@
           "android": "2.0.1",
           "ios": "2.0.0",
           "macos": "0.1.0"
+        },
+        "data-driven styling": {}
+      }
+    },
+    "text-pitch-scale": {
+      "type": "number",
+      "default": 1,
+      "minimum": 0,
+      "maximum": 1,
+      "doc": "If set to 1, text scales along with other map features as the map is tilted. Values lower than 1 reduce the amount of scaling. Value of 0 means text stays the same size no matter the tilt of the map.",
+      "requires": [
+        "text-field"
+      ],
+      "sdk-support": {
+        "basic functionality": {
+          "js": "0.34.0"
         },
         "data-driven styling": {}
       }
