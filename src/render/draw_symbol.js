@@ -169,11 +169,12 @@ function setSymbolDrawState(program, painter, layer, tileZoom, isText, isSDF, ro
         // the camera function values at z = tileZoom and z = tileZoom + 1
         // to be consistent with this restriction on composite functions
 
-        const t = interpolationFactor(tr.zoom,
-            sizeData.functionBase,
-            sizeData.coveringZoomRange[0],
-            sizeData.coveringZoomRange[1]
-        );
+        const t = sizeData.functionType === 'interval' ? 0 :
+            interpolationFactor(tr.zoom,
+                sizeData.functionBase,
+                sizeData.coveringZoomRange[0],
+                sizeData.coveringZoomRange[1]);
+
         const lowerValue = sizeData.coveringStopValues[0];
         const upperValue = sizeData.coveringStopValues[1];
         const size = lowerValue + (upperValue - lowerValue) * util.clamp(t, 0, 1);
